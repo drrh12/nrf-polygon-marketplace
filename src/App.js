@@ -1,5 +1,5 @@
 import "./App.css";
-import SideMenu, { menuItems } from "./components/SideMenu";
+import SideMenu, { menuItems } from "./components/Menu/SideMenu";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
@@ -28,8 +28,8 @@ function App() {
         />
 
         <div className={`container ${inactive ? "inactive" : ""}`}>
-          {/* improvememt, not recorded in video, its just looping through menuItems
-          instead of hard coding all the routes */}
+          {/* Looping through menuItems instead of hard coding all the routes */}
+
           {menuItems.map((menu, index) => (
             <>
               <Route key={menu.name} exact={menu.exact} path={menu.to}>
@@ -44,36 +44,6 @@ function App() {
                 : null}
             </>
           ))}
-
-          {/* <Switch>
-            <Route exact path={"/"}>
-              <Dashboard />
-            </Route>
-            <Route exact path={"/content"}>
-              <Content />
-            </Route>
-            <Route path={"/content/courses"}>
-              <Courses />
-            </Route>
-            <Route path={"/content/videos"}>
-              <Videos />
-            </Route>
-            <Route path={"/design"}>
-              <Design />
-            </Route>
-            <Route exact path={"/content-2"}>
-              <Content2 />
-            </Route>
-            <Route path={"/content-2/courses"}>
-              <Courses2 />
-            </Route>
-            <Route path={"/content-2/videos"}>
-              <Videos2 />
-            </Route>
-            <Route path={"/design-2"}>
-              <Design2 />
-            </Route>
-          </Switch> */}
         </div>
       </Router>
     </div>
