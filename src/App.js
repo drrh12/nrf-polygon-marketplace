@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import MarketPlace from "./components/MarketPlace/MarketPlace";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Create from "./components/Dashboard/Create/Create";
+import Collection from "./components/Dashboard/Collection/Collection";
 
 function App() {
   const [inactive, setInactive] = useState(false);
@@ -23,6 +25,8 @@ function App() {
         <Routes>
           <Route path="/marketplace" element={<MarketPlace />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard/collection" element={<Collection />}></Route>
+          <Route path="/dashboard/create" element={<Create />}></Route>
         </Routes>
         {/* <div className={`container ${inactive ? "inactive" : ""}`}>
           <Switch>

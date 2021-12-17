@@ -18,7 +18,7 @@ export const menuItems = [
     to: `/dashboard`,
     iconClassName: "bi bi-collection-fill",
     subMenus: [
-      { name: "NFT Colletion", to: "/dashboard/wallet" },
+      { name: "NFT Colletion", to: "/dashboard/collection" },
       { name: "Create NFT", to: "/dashboard/create" },
     ],
   },
