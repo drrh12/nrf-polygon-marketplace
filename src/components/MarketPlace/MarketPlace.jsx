@@ -9,6 +9,8 @@ import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 import { ethers } from "ethers";
 
+import "./marketplace.css";
+
 export default function MarketPlace() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
@@ -71,17 +73,21 @@ export default function MarketPlace() {
     return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
 
   return (
-    <div>
+    <div className="marketplace">
       {nfts.map((nft, i) => (
-        <div
-          key={i}
-          image={nft.image}
-          name={nft.name}
-          description={nft.description}
-          price={nft.price}
-          function={() => buyNft(nft)}
-          buttonName="BUY"
-        ></div>
+        <div key={i}>
+          <img src={nft.image} />
+          <div>
+            <p>{nft.name}</p>
+            <div>
+              <p>{nft.description}</p>
+            </div>
+          </div>
+          <div>
+            <p>{nft.price} ETH</p>
+            <button onClick={() => buyNft(nft)}>Buy</button>
+          </div>
+        </div>
       ))}
     </div>
   );
