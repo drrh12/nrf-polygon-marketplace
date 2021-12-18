@@ -9,8 +9,6 @@ import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 import { ethers } from "ethers";
 
-// import Card from "../MyAssets/CardComponent/Card";
-
 export default function MarketPlace() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");

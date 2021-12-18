@@ -1,3 +1,7 @@
-div h1 {
+.createItem {
+  width: 60%;
+  height: 80vh;
+  border: 1px solid black;
+  margin: auto;
   text-align: center;
 }

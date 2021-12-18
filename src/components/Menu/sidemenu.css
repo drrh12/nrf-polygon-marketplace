@@ -216,6 +216,10 @@ body {
 .side-menu-footer .avatar img {
   max-width: 100%;
 }
+.side-menu-footer .avatar img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
 
 .side-menu-footer .user-info {
   display: inline-block;

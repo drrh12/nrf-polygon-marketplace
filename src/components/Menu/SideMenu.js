@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 // import logo from "../assets/logo/webscript.png";
-// import user from "../assets/user.jpg";
+import metamask from "../../assets/metamask.svg";
 import "./sidemenu.css";
 import MenuItem from "./MenuItem";
+import { ethers } from "ethers";
 
 // added more menuItems for testing
 export const menuItems = [
@@ -61,6 +62,45 @@ const SideMenu = (props) => {
     });
   }, []);
 
+  //Connection to MetaMask
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [userBalance, setUserBalance] = useState(null);
+  const [connButtonText, setConnButtonText] = useState("Connect wallet");
+
+  const connectWalletHandler = () => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((result) => {
+          accountChangedHandler(result[0]);
+        });
+    } else {
+      setErrorMessage("Install Metamask");
+    }
+  };
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount.toString());
+  };
+
+  const getUserBalance = (address) => {
+    window.ethereum
+      .request({ method: "eth_getBalance", params: [address, "latest"] })
+      .then((balance) => {
+        setUserBalance(ethers.utils.formatEther(balance));
+      });
+  };
+
+  const chainChangedHandler = () => {
+    window.location.reload();
+  };
+
+  window.ethereum.on("accountsChanged", accountChangedHandler);
+
+  window.ethereum.on("chainChanged", chainChangedHandler);
+
   return (
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
@@ -104,13 +144,16 @@ const SideMenu = (props) => {
         </ul>
       </div>
 
-      {/* <div className="side-menu-footer">
-        <div className="avatar"></div>
-        <div className="user-info">
-          <h5>Rizwan Khan</h5>
-          <p>rizwankhan@gmail.com</p>
+      <div className="side-menu-footer">
+        <div className="avatar">
+          <img onClick={connectWalletHandler} src={metamask} alt="" />
         </div>
-      </div> */}
+        <div className="user-info">
+          {/* <h5>Default account: {defaultAccount}</h5> */}
+          <p>Balance: {userBalance} ETH</p>
+        </div>
+      </div>
+      {errorMessage}
     </div>
   );
 };
