@@ -73,22 +73,32 @@ export default function MarketPlace() {
     return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
 
   return (
-    <div className="marketplace">
+    <div className="img-grid">
       {nfts.map((nft, i) => (
-        <div key={i}>
+        <div key={i} className="img-wrap">
           <img src={nft.image} />
-          <div>
-            <p>{nft.name}</p>
-            <div>
-              <p>{nft.description}</p>
-            </div>
-          </div>
-          <div>
-            <p>{nft.price} ETH</p>
-            <button onClick={() => buyNft(nft)}>Buy</button>
-          </div>
         </div>
       ))}
     </div>
   );
+}
+
+{
+  /* <div className="marketplace">
+  {nfts.map((nft, i) => (
+    <div key={i}>
+      <img src={nft.image} />
+      <div>
+        <p>{nft.name}</p>
+        <div>
+          <p>{nft.description}</p>
+        </div>
+      </div>
+      <div>
+        <p>{nft.price} ETH</p>
+        <button onClick={() => buyNft(nft)}>Buy</button>
+      </div>
+    </div>
+  ))}
+</div>; */
 }
