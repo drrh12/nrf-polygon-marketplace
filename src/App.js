@@ -22,22 +22,18 @@ function App() {
             setInactive(inactive);
           }}
         />
-        <Routes>
-          <Route path="/marketplace" element={<MarketPlace />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-          <Route path="/dashboard/collection" element={<Collection />}></Route>
-          <Route path="/dashboard/create" element={<Create />}></Route>
-        </Routes>
-        {/* <div className={`container ${inactive ? "inactive" : ""}`}>
-          <Switch>
-            <Route path="/Marketplace">
-              <MarketPlace></MarketPlace>
-            </Route>
-            <Route path="/Dashboard">
-              <Dashboard></Dashboard>
-            </Route>
-          </Switch>
-        </div> */}
+
+        <div className={`container ${inactive ? "inactive" : ""}`}>
+          <Routes>
+            <Route path="/marketplace" element={<MarketPlace />}></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
+            <Route
+              path="/dashboard/collection"
+              element={<Collection />}
+            ></Route>
+            <Route path="/dashboard/create" element={<Create />}></Route>
+          </Routes>
+        </div>
       </Router>
     </div>
   );

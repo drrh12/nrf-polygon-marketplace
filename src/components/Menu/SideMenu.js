@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-// import logo from "../assets/logo/webscript.png";
-import metamask from "../../assets/metamask.svg";
-import "./sidemenu.css";
 import MenuItem from "./MenuItem";
 import { ethers } from "ethers";
 
-// added more menuItems for testing
+// import css
+import "./sidemenu.css";
+
+//import logos
+import metamask from "../../assets/metamask.svg";
+
+//menuItems and submenu items
+
 export const menuItems = [
   {
     name: "Marketplace",
@@ -36,7 +40,6 @@ const SideMenu = (props) => {
     props.onCollapse(inactive);
   }, [inactive]);
 
-  //just an improvment and it is not recorded in video :(
   const removeActiveClassFromSubMenu = () => {
     document.querySelectorAll(".sub-menu").forEach((el) => {
       el.classList.remove("active");
@@ -46,6 +49,7 @@ const SideMenu = (props) => {
   /*just a little improvement over click function of menuItem
     Now no need to use expand state variable in MenuItem component
   */
+
   useEffect(() => {
     let menuItems = document.querySelectorAll(".menu-item");
     menuItems.forEach((el) => {
