@@ -8,11 +8,14 @@
 
 .img-wrap {
   overflow: hidden;
-  height: 0;
+  /* height: 0; */
   padding: 50% 0;
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
-  /* opacity: 0.8; */
+}
+
+.img-b {
+  /* border: 1px solid black; */
 }
 
 .img-wrap img {
@@ -22,4 +25,18 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.button {
+  background: #0069eb;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+
+.button:hover {
+  cursor: pointer;
 }

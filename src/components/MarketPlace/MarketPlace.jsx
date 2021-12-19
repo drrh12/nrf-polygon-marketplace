@@ -83,10 +83,12 @@ export default function MarketPlace() {
             <div>
               <p>{nft.name}</p>
               <div>{nft.description}</div>
-            </div>
-            <div>
               <p>{nft.price}</p>
-              <button onClick={() => buyNft(nft)}>buy</button>
+            </div>
+            <div className="d-grid gap-2">
+              <button className="button" onClick={() => buyNft(nft)}>
+                buy
+              </button>
             </div>
           </div>
         ))}
