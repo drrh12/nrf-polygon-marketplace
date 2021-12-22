@@ -7,6 +7,8 @@ import { nftaddress, nftmarketaddress } from "../../config";
 import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
+import ethlogo from "../../assets/logo/eth-logo.svg";
+
 import { ethers } from "ethers";
 
 import "./marketplace.css";
@@ -81,9 +83,12 @@ export default function MarketPlace() {
               <img src={nft.image} />
             </div>
             <div>
-              <p>{nft.name}</p>
-              <div>{nft.description}</div>
-              <p>{nft.price}</p>
+              <h2>{nft.name}</h2>
+              <p>{nft.description}</p>
+              <p>
+                <img className="ethlogo" src={ethlogo} alt="" />
+                {nft.price}
+              </p>
             </div>
             <div className="d-grid gap-2">
               <button className="button" onClick={() => buyNft(nft)}>

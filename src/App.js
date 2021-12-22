@@ -9,13 +9,15 @@ import MarketPlace from "./components/MarketPlace/MarketPlace";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Create from "./components/Dashboard/Create/Create";
 import Collection from "./components/Dashboard/Collection/Collection";
+import Sidebarmenu from "./components/Menu/Sidebarmenu";
 
 function App() {
   const [inactive, setInactive] = useState(false);
 
   return (
     <div className="App">
-      <Router>
+      <Sidebarmenu></Sidebarmenu>
+      {/* <Router>
         <SideMenu
           onCollapse={(inactive) => {
             console.log(inactive);
@@ -34,7 +36,7 @@ function App() {
             <Route path="/dashboard/create" element={<Create />}></Route>
           </Routes>
         </div>
-      </Router>
+      </Router> */}
     </div>
   );
 }

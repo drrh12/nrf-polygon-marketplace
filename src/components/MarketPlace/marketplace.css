@@ -4,6 +4,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
+  text-align: center;
+}
+
+.ethlogo {
+  width: 10px;
 }
 
 .img-wrap {
