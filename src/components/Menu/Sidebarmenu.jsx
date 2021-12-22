@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./sidebarmenu.scss";
 
+import { NavLink, Link, Routes, Route } from "react-router-dom";
+import MarketPlace from "../MarketPlace/MarketPlace";
+import Dashboard from "../Dashboard/Dashboard";
+import Collection from "../Dashboard/Collection/Collection";
+import Create from "../Dashboard/Create/Create";
+
 window.addEventListener("DOMContentLoaded", (event) => {
   // Toggle the side navigation
   const sidebarToggle = document.body.querySelector("#sidebarToggle");
@@ -30,24 +36,24 @@ export default function Sidebarmenu() {
       <div class="border-end bg-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light">Crypto NFT</div>
         <div class="list-group list-group-flush">
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
+          <Link
+            className="list-group-item list-group-item-action list-group-item-light p-3"
+            to="/marketplace"
           >
             MarketPlace
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
+          </Link>
+          <Link
+            className="list-group-item list-group-item-action list-group-item-light p-3"
+            to="/dashboard/collection"
           >
             Wallet
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
+          </Link>
+          <Link
+            className="list-group-item list-group-item-action list-group-item-light p-3"
+            to="/dashboard/create"
           >
-            Creator Dashboard
-          </a>
+            Create
+          </Link>
         </div>
       </div>
       <div id="page-content-wrapper">
@@ -112,19 +118,19 @@ export default function Sidebarmenu() {
           </div>
         </nav>
         <div class="container-fluid">
-          <h1 class="mt-4">Simsplex Sidebar</h1>
-          <p>
-            The starting state of the menu will appear collapsed on smaller
-            screens, and will appear non-collapsed on larger screens. When
-            toggled using the button below, the menu will change.
-          </p>
-          <p>
-            Make sure to keep all page content within the{" "}
-            <code>#page-content-wrapper</code>. The top navbar is optional, and
-            just for demonstration. Just create an element with the{" "}
-            <code>#sidebarToggle</code> ID which will toggle the menu when
-            clicked.
-          </p>
+          {/* <h1 class="mt-4">Simsplex Sidebar</h1> */}
+          <Routes>
+            <Route
+              path="/marketplace"
+              element={<MarketPlace></MarketPlace>}
+            ></Route>
+            <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+            <Route
+              path="/dashboard/collection"
+              element={<Collection></Collection>}
+            ></Route>
+            <Route path="/dashboard/create" element={<Create></Create>}></Route>
+          </Routes>
         </div>
       </div>
     </div>

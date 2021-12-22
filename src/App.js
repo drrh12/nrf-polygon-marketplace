@@ -16,27 +16,16 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebarmenu></Sidebarmenu>
-      {/* <Router>
-        <SideMenu
-          onCollapse={(inactive) => {
-            console.log(inactive);
-            setInactive(inactive);
-          }}
-        />
-
-        <div className={`container ${inactive ? "inactive" : ""}`}>
-          <Routes>
-            <Route path="/marketplace" element={<MarketPlace />}></Route>
-            <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route
-              path="/dashboard/collection"
-              element={<Collection />}
-            ></Route>
-            <Route path="/dashboard/create" element={<Create />}></Route>
-          </Routes>
-        </div>
-      </Router> */}
+      {/* <Sidebarmenu></Sidebarmenu> */}
+      <Router>
+        <Sidebarmenu></Sidebarmenu>
+        {/* <Routes>
+          <Route path="/marketplace" element={<MarketPlace />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/dashboard/collection" element={<Collection />}></Route>
+          <Route path="/dashboard/create" element={<Create />}></Route>
+        </Routes> */}
+      </Router>
     </div>
   );
 }
