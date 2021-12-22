@@ -1,49 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebarmenu.scss";
 
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Toggle the side navigation
+  const sidebarToggle = document.body.querySelector("#sidebarToggle");
+
+  if (sidebarToggle) {
+    if (localStorage.getItem("sb|sidebar-toggle") === "true") {
+      document.body.classList.toggle("sb-sidenav-toggled");
+    }
+    sidebarToggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      document.body.classList.toggle("sb-sidenav-toggled");
+      localStorage.setItem(
+        "sb|sidebar-toggle",
+        document.body.classList.contains("sb-sidenav-toggled")
+      );
+    });
+  }
+});
+
 export default function Sidebarmenu() {
+  // const [inactive, setInactive] = useState(false);
+
+  // useEffect(() => {});
+
   return (
     <div class="d-flex" id="wrapper">
       <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light">
-          Start Bootstrap{" "}
-        </div>
+        <div class="sidebar-heading border-bottom bg-light">Crypto NFT</div>
         <div class="list-group list-group-flush">
           <a
             class="list-group-item list-group-item-action list-group-item-light p-3"
             href="#!"
           >
-            Dashboard
+            MarketPlace
           </a>
           <a
             class="list-group-item list-group-item-action list-group-item-light p-3"
             href="#!"
           >
-            Shortcuts
+            Wallet
           </a>
           <a
             class="list-group-item list-group-item-action list-group-item-light p-3"
             href="#!"
           >
-            Overview
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
-          >
-            Events
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
-          >
-            Profile
-          </a>
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="#!"
-          >
-            Status
+            Creator Dashboard
           </a>
         </div>
       </div>
@@ -109,7 +112,7 @@ export default function Sidebarmenu() {
           </div>
         </nav>
         <div class="container-fluid">
-          <h1 class="mt-4">Simplex Sidebar</h1>
+          <h1 class="mt-4">Simsplex Sidebar</h1>
           <p>
             The starting state of the menu will appear collapsed on smaller
             screens, and will appear non-collapsed on larger screens. When
