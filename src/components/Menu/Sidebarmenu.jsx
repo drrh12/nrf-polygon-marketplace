@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 export default function Sidebarmenu() {
-  // const [inactive, setInactive] = useState(false);
+  // const [inactive, setInactiv e] = useState(false);
 
   // useEffect(() => {});
 
@@ -40,7 +40,7 @@ export default function Sidebarmenu() {
             className="list-group-item list-group-item-action list-group-item-light p-3"
             to="/marketplace"
           >
-            MarketPlace
+            MarketPlac
           </Link>
           <Link
             className="list-group-item list-group-item-action list-group-item-light p-3"
