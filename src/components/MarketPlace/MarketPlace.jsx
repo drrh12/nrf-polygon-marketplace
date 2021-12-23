@@ -76,6 +76,66 @@ export default function MarketPlace() {
 
   return (
     <>
+      <div class="container-fluid">
+        <div class="px-lg-5">
+          <div class="row py-5">
+            <div class="col-lg-12 mx-auto">
+              <div class="text-black p-5 shadow-sm rounded banner">
+                {/* <h1 class="display-4">Address:</h1> */}
+                <p class="lead">Address:</p>
+                <p class="lead">Balance:</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            {nfts.map((nft, i) => (
+              <div key={i} class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="bg-white rounded shadow-sm">
+                  <img
+                    src={nft.image}
+                    alt="nft"
+                    class="img-fluid card-img-top"
+                  />
+                  <div class="p-4">
+                    <h5>
+                      {" "}
+                      <a href="#" class="text-dark">
+                        {nft.name}
+                      </a>
+                    </h5>
+                    <p class="small text-muted mb-0">{nft.description}</p>
+                    <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                      <p class="small mb-0">
+                        <i class="fa fa-picture-o mr-2"></i>
+                        <span class="font-weight-bold">{nft.price}</span>
+                      </p>
+                      <div
+                        onClick={() => buyNft(nft)}
+                        class="badge badge-danger px-3 rounded-pill font-weight-normal text-black"
+                      >
+                        buy
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* <div class="py-5 text-right">
+            <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
+              Show me more
+            </a>
+          </div> */}
+        </div>
+      </div>
+    </>
+  );
+}
+
+{
+  /* <>
       <div className="img-grid">
         {nfts.map((nft, i) => (
           <div key={i}>
@@ -98,6 +158,5 @@ export default function MarketPlace() {
           </div>
         ))}
       </div>
-    </>
-  );
+    </> */
 }

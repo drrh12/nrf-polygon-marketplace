@@ -60,7 +60,7 @@ export default function Sidebarmenu() {
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
           <div class="container-fluid">
             <button class="btn btn-primary" id="sidebarToggle">
-              Toggle Menu
+              Menu
             </button>
             <button
               class="navbar-toggler"

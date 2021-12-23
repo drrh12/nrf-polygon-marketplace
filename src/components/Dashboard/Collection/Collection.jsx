@@ -68,37 +68,67 @@ export default function Collection() {
             </div>
           </div>
 
-          {nfts.map((nft, i) => (
-            <div key={i} class="row">
-              <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                <div class="bg-white rounded shadow-sm">
-                  <img
-                    src={nft.image}
-                    alt="nft"
-                    class="img-fluid card-img-top"
-                  />
-                  <div class="p-4">
-                    <h5>
-                      {" "}
-                      <a href="#" class="text-dark">
-                        {nft.title}
-                      </a>
-                    </h5>
-                    <p class="small text-muted mb-0">{nft.description}</p>
-                    <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                      <p class="small mb-0">
-                        <i class="fa fa-picture-o mr-2"></i>
-                        <span class="font-weight-bold">JPG</span>
-                      </p>
-                      <div class="badge badge-danger px-3 rounded-pill font-weight-normal">
-                        New
-                      </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+              <div class="bg-white rounded shadow-sm">
+                <img
+                  src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg"
+                  alt=""
+                  class="img-fluid card-img-top"
+                />
+                <div class="p-4">
+                  <h5>
+                    {" "}
+                    <a href="#" class="text-dark">
+                      Red paint cup
+                    </a>
+                  </h5>
+                  <p class="small text-muted mb-0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                    <p class="small mb-0">
+                      <i class="fa fa-picture-o mr-2"></i>
+                      <span class="font-weight-bold">JPG</span>
+                    </p>
+                    <div class="badge badge-danger px-3 rounded-pill font-weight-normal">
+                      New
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+              <div class="bg-white rounded shadow-sm">
+                <img
+                  src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg"
+                  alt=""
+                  class="img-fluid card-img-top"
+                />
+                <div class="p-4">
+                  <h5>
+                    {" "}
+                    <a href="#" class="text-dark">
+                      Blorange
+                    </a>
+                  </h5>
+                  <p class="small text-muted mb-0">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                  </p>
+                  <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                    <p class="small mb-0">
+                      <i class="fa fa-picture-o mr-2"></i>
+                      <span class="font-weight-bold">PNG</span>
+                    </p>
+                    <div class="badge badge-primary px-3 rounded-pill font-weight-normal">
+                      Trend
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="py-5 text-right">
             <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
@@ -109,6 +139,25 @@ export default function Collection() {
       </div>
     </>
   );
+}
+
+{
+  /* <div className="flex justify-center">
+      <div className="p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
+          {nfts.map((nft, i) => (
+            <div key={i} className="border shadow rounded-xl overflow-hidden">
+              <img src={nft.image} className="rounded" />
+              <div className="p-4 bg-black">
+                <p className="text-2xl font-bold text-white">
+                  Price - {nft.price} Eth
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div> */
 }
 
 {
