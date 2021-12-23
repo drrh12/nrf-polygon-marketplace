@@ -114,7 +114,7 @@ export default function MarketPlace() {
                         onClick={() => buyNft(nft)}
                         class="badge badge-danger px-3 rounded-pill font-weight-normal text-black"
                       >
-                        buy
+                        BUY
                       </div>
                     </div>
                   </div>

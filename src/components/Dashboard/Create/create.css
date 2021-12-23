@@ -1,7 +1,21 @@
-.createItem {
-  width: 60%;
-  height: 80vh;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
+.form-container {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.form-group {
+  margin-top: 2rem;
+}
+
+#upload-file {
+  margin-top: 2rem;
+}
+
+#button {
+  margin-top: 2rem;
+}
+
+.image-div {
+  width: 80%;
+  margin: 2rem auto;
 }

@@ -87,29 +87,67 @@ export default function Create() {
 
   return (
     <>
-      <div className="createItem">
-        <input
-          onChange={(e) =>
-            updateFormInput({ ...formInput, name: e.target.value })
-          }
-          placeholder="Asset Name"
-        />
-        <textarea
-          onChange={(e) =>
-            updateFormInput({ ...formInput, description: e.target.value })
-          }
-          placeholder="Asset Description"
-          rows="5"
-        />
-        <input
-          onChange={(e) =>
-            updateFormInput({ ...formInput, price: e.target.value })
-          }
-          placeholder="Asset Price"
-        />
-        <input type="file" name="Asset" onChange={onChange}></input>
-        {fileUrl && <img width="350" alt="nft" src={fileUrl} />}
-        <button onClick={createMarket}>Create Digital Asset</button>
+      <div className="form-container">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title:</label>
+
+            <input
+              onChange={(e) =>
+                updateFormInput({ ...formInput, name: e.target.value })
+              }
+              // type="name"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter the art name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Description:</label>
+
+            <input
+              onChange={(e) =>
+                updateFormInput({ ...formInput, description: e.target.value })
+              }
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Enter the description"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Price:</label>
+
+            <input
+              onChange={(e) =>
+                updateFormInput({ ...formInput, price: e.target.value })
+              }
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Enter the price in MATIC"
+            />
+          </div>
+
+          <div id="upload-file" class="input-group">
+            <div class="custom-file">
+              <input
+                type="file"
+                class="custom-file-input"
+                id="inputGroupFile04"
+                onChange={onChange}
+              />
+            </div>
+          </div>
+
+          <div className="image-div">
+            {fileUrl && <img width="100%" alt="nft" src={fileUrl} />}
+          </div>
+        </form>
+        <button id="button" onClick={createMarket} class="btn btn-primary">
+          Create
+        </button>
       </div>
     </>
   );
