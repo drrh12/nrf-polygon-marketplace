@@ -64,76 +64,44 @@ export default function Collection() {
                 {/* <h1 class="display-4">Address:</h1> */}
                 <p class="lead">Address:</p>
                 <p class="lead">Balance:</p>
+                <div class="py-5 text-right">
+                  <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
+                    CONNECT TO YOUR WALLET
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-              <div class="bg-white rounded shadow-sm">
-                <img
-                  src="https://bootstrapious.com/i/snippets/sn-gallery/img-1.jpg"
-                  alt=""
-                  class="img-fluid card-img-top"
-                />
-                <div class="p-4">
-                  <h5>
-                    {" "}
-                    <a href="#" class="text-dark">
-                      Red paint cup
-                    </a>
-                  </h5>
-                  <p class="small text-muted mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                  </p>
-                  <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                    <p class="small mb-0">
-                      <i class="fa fa-picture-o mr-2"></i>
-                      <span class="font-weight-bold">JPG</span>
-                    </p>
-                    <div class="badge badge-danger px-3 rounded-pill font-weight-normal">
-                      New
+            {nfts.map((nft, i) => (
+              <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div key={i} class="bg-white rounded shadow-sm">
+                  <img src={nft.image} alt="" class="img-fluid card-img-top" />
+                  <div class="p-4">
+                    <h5>
+                      {" "}
+                      <a href="#" class="text-dark">
+                        {nft.name}
+                      </a>
+                    </h5>
+                    <p class="small text-muted mb-0">{nft.description}</p>
+                    <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                      <p class="small mb-0">
+                        <i class="fa fa-picture-o mr-2"></i>
+                        <span class="font-weight-bold">{nft.price}</span>
+                      </p>
+                      <div
+                        class="badge badge-danger px-3 rounded-pill font-weight-normal text-black"
+                        text-black
+                      >
+                        Sell
+                      </div>
                     </div>
                   </div>
-                </div>
+                </div>{" "}
               </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-              <div class="bg-white rounded shadow-sm">
-                <img
-                  src="https://bootstrapious.com/i/snippets/sn-gallery/img-2.jpg"
-                  alt=""
-                  class="img-fluid card-img-top"
-                />
-                <div class="p-4">
-                  <h5>
-                    {" "}
-                    <a href="#" class="text-dark">
-                      Blorange
-                    </a>
-                  </h5>
-                  <p class="small text-muted mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                  </p>
-                  <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
-                    <p class="small mb-0">
-                      <i class="fa fa-picture-o mr-2"></i>
-                      <span class="font-weight-bold">PNG</span>
-                    </p>
-                    <div class="badge badge-primary px-3 rounded-pill font-weight-normal">
-                      Trend
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="py-5 text-right">
-            <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
-              Show me more
-            </a>
+            ))}
           </div>
         </div>
       </div>

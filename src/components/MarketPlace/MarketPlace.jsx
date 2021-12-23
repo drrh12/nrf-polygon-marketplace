@@ -77,16 +77,16 @@ export default function MarketPlace() {
   return (
     <>
       <div class="container-fluid">
-        <div class="px-lg-5">
-          <div class="row py-5">
+        <div class="px-lg-5" id="market-container">
+          {/* <div class="row py-5">
             <div class="col-lg-12 mx-auto">
               <div class="text-black p-5 shadow-sm rounded banner">
-                {/* <h1 class="display-4">Address:</h1> */}
+                <h1 class="display-4">Address:</h1>
                 <p class="lead">Address:</p>
                 <p class="lead">Balance:</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div class="row">
             {nfts.map((nft, i) => (
@@ -132,31 +132,4 @@ export default function MarketPlace() {
       </div>
     </>
   );
-}
-
-{
-  /* <>
-      <div className="img-grid">
-        {nfts.map((nft, i) => (
-          <div key={i}>
-            <div className="img-wrap">
-              <img src={nft.image} />
-            </div>
-            <div>
-              <h2>{nft.name}</h2>
-              <p>{nft.description}</p>
-              <p>
-                <img className="ethlogo" src={ethlogo} alt="" />
-                {nft.price}
-              </p>
-            </div>
-            <div className="d-grid gap-2">
-              <button className="button" onClick={() => buyNft(nft)}>
-                buy
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </> */
 }
