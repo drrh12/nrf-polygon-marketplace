@@ -10,6 +10,47 @@ import NFT from "../../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 export default function Collection() {
+  //Connection to MetaMask
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [userBalance, setUserBalance] = useState(null);
+  const [connButtonText, setConnButtonText] = useState("Connect wallet");
+
+  const connectWalletHandler = () => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((result) => {
+          accountChangedHandler(result[0]);
+        });
+    } else {
+      setErrorMessage("Install Metamask");
+    }
+  };
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount.toString());
+  };
+
+  const getUserBalance = (address) => {
+    window.ethereum
+      .request({ method: "eth_getBalance", params: [address, "latest"] })
+      .then((balance) => {
+        setUserBalance(ethers.utils.formatEther(balance));
+      });
+  };
+
+  const chainChangedHandler = () => {
+    window.location.reload();
+  };
+
+  window.ethereum.on("accountsChanged", accountChangedHandler);
+
+  window.ethereum.on("chainChanged", chainChangedHandler);
+
+  // End connection with metamask function
+
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
@@ -62,9 +103,9 @@ export default function Collection() {
             <div class="col-lg-12 mx-auto">
               <div class="text-black p-5 shadow-sm rounded banner">
                 {/* <h1 class="display-4">Address:</h1> */}
-                <p class="lead">Address:</p>
-                <p class="lead">Balance:</p>
-                <div class="py-5 text-right">
+                <p class="lead">Address: {defaultAccount}</p>
+                <p class="lead">Balance: {userBalance}</p>
+                <div onClick={connectWalletHandler} class="py-5 text-right">
                   <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
                     CONNECT TO YOUR WALLET
                   </a>
@@ -107,42 +148,4 @@ export default function Collection() {
       </div>
     </>
   );
-}
-
-{
-  /* <div className="flex justify-center">
-      <div className="p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-          {nfts.map((nft, i) => (
-            <div key={i} className="border shadow rounded-xl overflow-hidden">
-              <img src={nft.image} className="rounded" />
-              <div className="p-4 bg-black">
-                <p className="text-2xl font-bold text-white">
-                  Price - {nft.price} Eth
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div> */
-}
-
-{
-  /* <div className="flex justify-center">
-      <div className="p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-          {nfts.map((nft, i) => (
-            <div key={i} className="border shadow rounded-xl overflow-hidden">
-              <img src={nft.image} className="rounded" />
-              <div className="p-4 bg-black">
-                <p className="text-2xl font-bold text-white">
-                  Price - {nft.price} Eth
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div> */
 }
