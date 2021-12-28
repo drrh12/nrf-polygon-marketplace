@@ -40,7 +40,7 @@ export default function Sidebarmenu() {
             className="list-group-item list-group-item-action list-group-item-light p-3"
             to="/marketplace"
           >
-            MarketPlac
+            MarketPlace
           </Link>
           <Link
             className="list-group-item list-group-item-action list-group-item-light p-3"
@@ -75,7 +75,7 @@ export default function Sidebarmenu() {
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                {/* <li class="nav-item active">
                   <a class="nav-link" href="#!">
                     Home{" "}
                   </a>
@@ -84,7 +84,7 @@ export default function Sidebarmenu() {
                   <a class="nav-link" href="#!">
                     Link
                   </a>
-                </li>
+                </li> */}
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -95,22 +95,22 @@ export default function Sidebarmenu() {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Language
                   </a>
                   <div
                     class="dropdown-menu dropdown-menu-end"
                     aria-labelledby="navbarDropdown"
                   >
                     <a class="dropdown-item" href="#!">
-                      Action
+                      English
                     </a>
                     <a class="dropdown-item" href="#!">
-                      Another action
+                      Portuguese
                     </a>
-                    <div class="dropdown-divider"></div>
+                    {/* <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#!">
                       Something else here
-                    </a>
+                    </a> */}
                   </div>
                 </li>
               </ul>
