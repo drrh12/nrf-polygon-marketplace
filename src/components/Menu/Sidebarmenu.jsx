@@ -57,7 +57,7 @@ export default function Sidebarmenu() {
         </div>
       </div>
       <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
           <div class="container-fluid">
             <button class="btn btn-primary" id="sidebarToggle">
               Menu
@@ -87,7 +87,7 @@ export default function Sidebarmenu() {
                 </li> */}
                 <li class="nav-item dropdown">
                   <a
-                    class="nav-link dropdown-toggle"
+                    class="nav-link dropdown-toggle text-white"
                     id="navbarDropdown"
                     href="#"
                     role="button"

@@ -80,6 +80,8 @@ contract NFTMarket is ReentrancyGuard {
     );
   }
 
+  /* Creates selling function to the market place */
+
   /* Creates the sale of a marketplace item */
   /* Transfers ownership of the item, as well as funds between parties */
   function createMarketSale(

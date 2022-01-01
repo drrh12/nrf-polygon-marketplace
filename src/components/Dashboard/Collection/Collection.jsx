@@ -93,7 +93,22 @@ export default function Collection() {
     setLoadingState("loaded");
   }
   if (loadingState === "loaded" && !nfts.length)
-    return <h1>No assets owned</h1>;
+    return (
+      <div class="row py-5">
+        <div class="col-lg-12 mx-auto">
+          <div class="text-black p-5 shadow-sm rounded banner">
+            {/* <h1 class="display-4">Address:</h1> */}
+            <p class="lead">Address: {defaultAccount}</p>
+            <p class="lead">Balance: {userBalance}</p>
+            <div onClick={connectWalletHandler} class="py-5 text-right">
+              <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
+                CONNECT TO YOUR WALLET
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
 
   return (
     <>
@@ -106,8 +121,8 @@ export default function Collection() {
                 <p class="lead">Address: {defaultAccount}</p>
                 <p class="lead">Balance: {userBalance}</p>
                 <div onClick={connectWalletHandler} class="py-5 text-right">
-                  <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
-                    CONNECT TO YOUR WALLET
+                  <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
+                    CONNECTED
                   </a>
                 </div>
               </div>

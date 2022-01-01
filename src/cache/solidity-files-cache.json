@@ -442,8 +442,8 @@
       ]
     },
     "/Users/flavio/Desktop/code/tcc-crypto/src/contracts/NFTMarket.sol": {
-      "lastModificationDate": 1639810063650,
-      "contentHash": "86d4d053305539ac36fda46031e6bfc9",
+      "lastModificationDate": 1640764661023,
+      "contentHash": "343db0f7710ddacac5bde0518c6f1194",
       "sourceName": "contracts/NFTMarket.sol",
       "solcConfig": {
         "version": "0.8.4",

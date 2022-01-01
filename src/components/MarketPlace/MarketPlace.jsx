@@ -8,6 +8,7 @@ import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 import ethlogo from "../../assets/logo/eth-logo.svg";
+import matic from "../../assets/logo/matic.svg";
 
 import { ethers } from "ethers";
 
@@ -22,7 +23,8 @@ export default function MarketPlace() {
   }, []);
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider();
+    const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P");
+
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
       nftmarketaddress,
@@ -107,7 +109,9 @@ export default function MarketPlace() {
                     <p class="small text-muted mb-0">{nft.description}</p>
                     <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                       <p class="small mb-0">
-                        <i class="fa fa-picture-o mr-2"></i>
+                        <i class="fa fa-picture-o mr-2">
+                          <img src={ethlogo} width={"10px"} alt="logo" />{" "}
+                        </i>
                         <span class="font-weight-bold">{nft.price}</span>
                       </p>
                       <div
