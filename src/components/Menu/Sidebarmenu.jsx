@@ -34,7 +34,7 @@ export default function Sidebarmenu() {
   return (
     <div class="d-flex" id="wrapper">
       <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light">Crypto NFT</div>
+        <div class="sidebar-heading border-bottom bg-light">TCC Market</div>
         <div class="list-group list-group-flush">
           <Link
             className="list-group-item list-group-item-action list-group-item-light p-3"
