@@ -8,7 +8,7 @@ import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 import ethlogo from "../../assets/logo/eth-logo.svg";
-import matic from "../../assets/logo/matic.svg";
+// import matic from "../../assets/logo/matic.svg";
 
 import { ethers } from "ethers";
 
@@ -23,7 +23,9 @@ export default function MarketPlace() {
   }, []);
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider("https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P");
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P"
+    );
 
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
@@ -80,15 +82,24 @@ export default function MarketPlace() {
     <>
       <div class="container-fluid">
         <div class="px-lg-5" id="market-container">
-          {/* <div class="row py-5">
+          <div class="row py-5">
             <div class="col-lg-12 mx-auto">
               <div class="text-black p-5 shadow-sm rounded banner">
-                <h1 class="display-4">Address:</h1>
-                <p class="lead">Address:</p>
-                <p class="lead">Balance:</p>
+                {/* <h3 class="display-10">
+                  Thank you for reaching to this project
+                </h3> */}
+                <p class="lead">
+                  This project is NFT (Non Fungible Token) built on top of
+                  Polygon blockchain.
+                </p>
+                <p class="lead">
+                  If you are not familiar with blockchain, please refer to this
+                  tutorial and learn how to set up your account and use this
+                  platform to create, buy and sell your NFTs.
+                </p>
               </div>
             </div>
-          </div> */}
+          </div>
 
           <div class="row">
             {nfts.map((nft, i) => (

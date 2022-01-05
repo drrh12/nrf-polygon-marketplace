@@ -100,10 +100,30 @@ export default function Collection() {
             {/* <h1 class="display-4">Address:</h1> */}
             <p class="lead">Address: {defaultAccount}</p>
             <p class="lead">Balance: {userBalance}</p>
-            <div onClick={connectWalletHandler} class="py-5 text-right">
-              <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
-                CONNECT TO YOUR WALLET
+            <div onClick={connectWalletHandler()} class="py-5 text-right">
+              <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
+                CONNECTED
               </a>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <a href="#" class="btn btn-primary px-5 py-3 text-uppercase">
+                  MY COLLECTION
+                </a>
+              </div>
+              <div class="col-sm">
+                <a href="#" class="btn btn-primary px-5 py-3 text-uppercase">
+                  MY CREATIONS
+                </a>
+              </div>
+              <div class="col-sm">
+                <a href="#" class="btn btn-primary px-5 py-3 text-uppercase">
+                  MY NFT SELLS
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -121,8 +141,8 @@ export default function Collection() {
                 <p class="lead">Address: {defaultAccount}</p>
                 <p class="lead">Balance: {userBalance}</p>
                 <div onClick={connectWalletHandler} class="py-5 text-right">
-                  <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
-                    CONNECTED
+                  <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
+                    CONNECT TO YOUR METAMASK
                   </a>
                 </div>
               </div>
