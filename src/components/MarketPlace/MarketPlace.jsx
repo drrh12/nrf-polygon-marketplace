@@ -3,9 +3,12 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import { nftaddress, nftmarketaddress } from "../../config";
 
+import { Link, Routes, Route } from "react-router-dom";
+
 // import contracts
 import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
+import Guide from "../MarketPlace/Guide/Guide";
 
 import ethlogo from "../../assets/logo/eth-logo.svg";
 // import matic from "../../assets/logo/matic.svg";
@@ -97,6 +100,12 @@ export default function MarketPlace() {
                   tutorial and learn how to set up your account and use this
                   platform to create, buy and sell your NFTs.
                 </p>
+                <Link
+                  to="/guide"
+                  class="btn btn-warning px-5 py-2 text-uppercase"
+                >
+                  GUIDE
+                </Link>
               </div>
             </div>
           </div>

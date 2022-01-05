@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./sidebarmenu.scss";
 
 import { NavLink, Link, Routes, Route } from "react-router-dom";
+
 import MarketPlace from "../MarketPlace/MarketPlace";
 import Dashboard from "../Dashboard/Dashboard";
 import Collection from "../Dashboard/Collection/Collection";
 import Create from "../Dashboard/Create/Create";
+import Guide from "../MarketPlace/Guide/Guide";
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Toggle the side navigation
@@ -130,6 +132,7 @@ export default function Sidebarmenu() {
               element={<Collection></Collection>}
             ></Route>
             <Route path="/dashboard/create" element={<Create></Create>}></Route>
+            <Route path="/guide" element={<Guide></Guide>}></Route>
           </Routes>
         </div>
       </div>
