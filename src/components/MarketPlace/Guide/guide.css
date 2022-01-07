@@ -1,0 +1,27 @@
+.guide {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.guide-fst-h4 {
+  text-align: center;
+}
+
+.guide-snd-h4 {
+  margin-top: 2rem;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+.metamask-01,
+.metamask-02,
+.metamask-03,
+.metamask-04,
+.metamask-05,
+.metamask-06,
+.metamask-07,
+.metamask-08 {
+  width: 50%;
+}
