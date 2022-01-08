@@ -2,7 +2,7 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/flavio/Desktop/code/tcc-crypto/src/contracts/NFT.sol": {
-      "lastModificationDate": 1639810058798,
+      "lastModificationDate": 1641566354881,
       "contentHash": "7cea59932c3734ed3f17c98b3eea07c3",
       "sourceName": "contracts/NFT.sol",
       "solcConfig": {
@@ -442,7 +442,7 @@
       ]
     },
     "/Users/flavio/Desktop/code/tcc-crypto/src/contracts/NFTMarket.sol": {
-      "lastModificationDate": 1640764661023,
+      "lastModificationDate": 1641566229995,
       "contentHash": "343db0f7710ddacac5bde0518c6f1194",
       "sourceName": "contracts/NFTMarket.sol",
       "solcConfig": {

@@ -100,10 +100,35 @@ export default function Collection() {
             {/* <h1 class="display-4">Address:</h1> */}
             <p class="lead">Address: {defaultAccount}</p>
             <p class="lead">Balance: {userBalance}</p>
-            <div onClick={connectWalletHandler()} class="py-5 text-right">
+            <div onClick={connectWalletHandler} class="py-5 text-right">
               <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
-                CONNECTED
+                CONNECT YOUR WALLET
               </a>
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+    );
+
+  return (
+    <>
+      <div class="container-fluid">
+
+        <div class="px-lg-5">
+          <div class="row py-5">
+            <div class="col-lg-12 mx-auto">
+              <div class="text-black p-5 shadow-sm rounded banner">
+                <p class="lead">Address: {defaultAccount}</p>
+                <p class="lead">Balance: {userBalance}</p>
+                <div onClick={connectWalletHandler()} class="py-5 text-right">
+                  <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
+                    CONNECTED
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -123,28 +148,6 @@ export default function Collection() {
                 <a href="#" class="btn btn-primary px-5 py-3 text-uppercase">
                   MY NFT SELLS
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-
-  return (
-    <>
-      <div class="container-fluid">
-        <div class="px-lg-5">
-          <div class="row py-5">
-            <div class="col-lg-12 mx-auto">
-              <div class="text-black p-5 shadow-sm rounded banner">
-                {/* <h1 class="display-4">Address:</h1> */}
-                <p class="lead">Address: {defaultAccount}</p>
-                <p class="lead">Balance: {userBalance}</p>
-                <div onClick={connectWalletHandler} class="py-5 text-right">
-                  <a href="#" class="btn btn-dark px-5 py-3 text-uppercase">
-                    CONNECT TO YOUR METAMASK
-                  </a>
-                </div>
               </div>
             </div>
           </div>

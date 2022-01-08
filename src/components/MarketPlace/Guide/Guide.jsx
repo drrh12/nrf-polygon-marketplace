@@ -16,13 +16,16 @@ export default function Guide() {
           How to create a MetaMask wallet
         </a>
       </p>
+      <p>
+        You will need to connect your wallet to the RPC of the Polygon Mumbai network.
+      </p>
+      <p>Click in this <a href="https://docs.mobius.finance/resourses/testnet-guides-mumbai-network/connect-to-polygons-testnet">link </a> to see the tutorial. </p>
       <h4>How to create your first NFT</h4>
       <p>
         Navigate to the /create page and fill all necessary fields, "Title",
         "Description", "Price", upload a GIF or JPEG document and click on
         create.
       </p>
-      <img src="" alt="" />
     </div>
   );
 }
