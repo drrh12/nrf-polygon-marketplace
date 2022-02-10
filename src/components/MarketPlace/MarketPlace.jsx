@@ -11,6 +11,7 @@ import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import Guide from "../MarketPlace/Guide/Guide";
 
 import ethlogo from "../../assets/logo/eth-logo.svg";
+import loader from "../../assets/logo/loader.svg"
 // import matic from "../../assets/logo/matic.svg";
 
 import { ethers } from "ethers";
@@ -78,8 +79,8 @@ export default function MarketPlace() {
     loadNFTs();
   }
 
-  if (loadingState === "loaded" && !nfts.length)
-    return <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>;
+  if (loadingState === "not-loaded" && !nfts.length)
+    return <img src={loader} />;
 
   return (
     <>

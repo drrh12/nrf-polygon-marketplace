@@ -93,6 +93,7 @@ export default function Collection() {
     setLoadingState("loaded");
   }
   if (loadingState === "loaded" && !nfts.length)
+  
     return (
       <div class="row py-5">
         <div class="col-lg-12 mx-auto">

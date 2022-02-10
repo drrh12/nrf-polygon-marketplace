@@ -36,7 +36,7 @@ export default function Sidebarmenu() {
   return (
     <div class="d-flex" id="wrapper">
       <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light"><img href="https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.sf-kras.ru%2Fwp-content%2Fuploads%2F2015%2F06%2Fsfu-logo-small-1.png&imgrefurl=http%3A%2F%2Fwww.sf-kras.ru%2Fsfu-logo-small-1%2F&tbnid=mjYipi6oJ8Ow-M&vet=12ahUKEwiHq8uZqKL1AhVM6CoKHXx7Dq4QMygfegUIARCWAg..i&docid=W8Jj3aegcDvuhM&w=300&h=178&itg=1&q=SFU%20logo&ved=2ahUKEwiHq8uZqKL1AhVM6CoKHXx7Dq4QMygfegUIARCWAg"/></div>
+        <div class="sidebar-heading border-bottom bg-light"></div>
         <div class="list-group list-group-flush">
           <Link
             className="list-group-item list-group-item-action list-group-item-light p-3"
