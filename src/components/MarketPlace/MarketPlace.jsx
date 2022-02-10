@@ -12,7 +12,7 @@ import Guide from "../MarketPlace/Guide/Guide";
 
 import ethlogo from "../../assets/logo/eth-logo.svg";
 import loader from "../../assets/logo/loader.svg"
-// import matic from "../../assets/logo/matic.svg";
+import matic from "../../assets/logo/matic.svg";
 
 import { ethers } from "ethers";
 
@@ -80,7 +80,7 @@ export default function MarketPlace() {
   }
 
   if (loadingState === "not-loaded" && !nfts.length)
-    return <img src={loader} />;
+    return <img class="rounded mx-auto d-block" src={loader} />;
 
   return (
     <>
@@ -131,7 +131,7 @@ export default function MarketPlace() {
                     <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                       <p class="small mb-0">
                         <i class="fa fa-picture-o mr-2">
-                          <img src={ethlogo} width={"10px"} alt="logo" />{" "}
+                          <img src={matic} width={"30px"} alt="logo" />{" "}
                         </i>
                         <span class="font-weight-bold">{nft.price}</span>
                       </p>
