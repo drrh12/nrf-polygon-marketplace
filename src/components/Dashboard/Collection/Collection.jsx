@@ -53,6 +53,7 @@ export default function Collection() {
 
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
+  
   useEffect(() => {
     loadNFTs();
   }, []);

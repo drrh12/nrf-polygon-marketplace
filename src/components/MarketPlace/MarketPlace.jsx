@@ -9,9 +9,8 @@ import { Link, Routes, Route } from "react-router-dom";
 import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import Guide from "../MarketPlace/Guide/Guide";
-
 import ethlogo from "../../assets/logo/eth-logo.svg";
-import loader from "../../assets/logo/loader.svg"
+import loader from "../../assets/logo/loader.svg";
 import matic from "../../assets/logo/matic.svg";
 
 import { ethers } from "ethers";
@@ -26,8 +25,11 @@ export default function MarketPlace() {
     loadNFTs();
   }, []);
 
+  // https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P
+  // https://polygon-mumbai.g.alchemy.com/v2/vghaROHuGEOW7A8FyLT3qdaFpPuQSC1S
+
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider(
+    const provider = new ethers.providers.StaticJsonRpcProvider(
       "https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P"
     );
 
@@ -92,15 +94,8 @@ export default function MarketPlace() {
                 {/* <h3 class="display-10">
                   Thank you for reaching to this project
                 </h3> */}
-                <p class="lead">
-                  This project is NFT (Non Fungible Token) built on top of
-                  Polygon blockchain.
-                </p>
-                <p class="lead">
-                  If you are not familiar with blockchain, please refer to this
-                  tutorial and learn how to set up your account and use this
-                  platform to create, buy and sell your NFTs.
-                </p>
+                <p class="lead">NFT Amount:</p>
+                <p class="lead">Market Volume:</p>
                 <Link
                   to="/guide"
                   class="btn btn-warning px-5 py-2 text-uppercase"
