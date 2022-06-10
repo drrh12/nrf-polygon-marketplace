@@ -9,6 +9,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import NFT from "../../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import Guide from "../MarketPlace/Guide/Guide";
+
 import ethlogo from "../../assets/logo/eth-logo.svg";
 import loader from "../../assets/logo/loader.svg";
 import matic from "../../assets/logo/matic.svg";
@@ -25,11 +26,8 @@ export default function MarketPlace() {
     loadNFTs();
   }, []);
 
-  // https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P
-  // https://polygon-mumbai.g.alchemy.com/v2/vghaROHuGEOW7A8FyLT3qdaFpPuQSC1S
-
   async function loadNFTs() {
-    const provider = new ethers.providers.StaticJsonRpcProvider(
+    const provider = new ethers.providers.JsonRpcProvider(
       "https://polygon-mumbai.g.alchemy.com/v2/eOTbogfhcv54R1mVigmdzOBHG86jyh1P"
     );
 
@@ -46,6 +44,7 @@ export default function MarketPlace() {
         const tokenUri = await tokenContract.tokenURI(i.tokenId);
         const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
+
         let item = {
           price,
           tokenId: i.tokenId.toNumber(),
@@ -55,6 +54,7 @@ export default function MarketPlace() {
           name: meta.data.name,
           description: meta.data.description,
         };
+
         return item;
       })
     );
@@ -91,23 +91,17 @@ export default function MarketPlace() {
           <div class="row py-5">
             <div class="col-lg-12 mx-auto">
               <div class="text-black p-5 shadow-sm rounded banner">
-                {/* <h3 class="display-10">
-                  Thank you for reaching to this project
-                </h3> */}
-                <p class="lead">NFT Amount:</p>
-                <p class="lead">Market Volume:</p>
-                <Link
-                  to="/guide"
-                  class="btn btn-warning px-5 py-2 text-uppercase"
-                >
-                  GUIDE
-                </Link>
+                <p class="lead">Number of items displayed: {nfts.length}</p>
               </div>
             </div>
           </div>
 
+          
+
           <div class="row">
+            
             {nfts.map((nft, i) => (
+
               <div key={i} class="col-xl-3 col-lg-4 col-md-6 mb-4">
                 <div class="bg-white rounded shadow-sm">
                   <img
@@ -141,6 +135,7 @@ export default function MarketPlace() {
                 </div>
               </div>
             ))}
+
           </div>
 
           {/* <div class="py-5 text-right">
@@ -153,3 +148,26 @@ export default function MarketPlace() {
     </>
   );
 }
+
+
+{/* <div class="row py-5">
+            <div class="col-lg-12 mx-auto">
+              <div class="text-black p-5 shadow-sm rounded banner">
+                <p class="lead">
+                  This project is NFT (Non Fungible Token) built on top of
+                  Polygon blockchain.
+                </p>
+                <p class="lead">
+                  If you are not familiar with blockchain, please refer to this
+                  tutorial and learn how to set up your account and use this
+                  platform to create, buy and sell your NFTs.
+                </p>
+                <Link
+                  to="/guide"
+                  class="btn btn-warning px-5 py-2 text-uppercase"
+                >
+                  GUIDE
+                </Link>
+              </div>
+            </div>
+          </div> */}
