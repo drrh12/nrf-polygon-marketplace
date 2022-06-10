@@ -36,7 +36,7 @@ export default function Sidebarmenu() {
   return (
     <div class="d-flex" id="wrapper">
       <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light"></div>
+      
         <div class="list-group list-group-flush">
           <Link
             className="list-group-item list-group-item-action list-group-item-light p-3"
@@ -62,7 +62,7 @@ export default function Sidebarmenu() {
         <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
           <div class="container-fluid">
             <button class="btn btn-primary" id="sidebarToggle">
-              Menu
+              MENU
             </button>
             <button
               class="navbar-toggler"
@@ -87,7 +87,7 @@ export default function Sidebarmenu() {
                     Link
                   </a>
                 </li> */}
-                <li class="nav-item dropdown">
+                {/* <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle text-white"
                     id="navbarDropdown"
@@ -109,12 +109,9 @@ export default function Sidebarmenu() {
                     <a class="dropdown-item" href="#!">
                       Portuguese
                     </a>
-                    {/* <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#!">
-                      Something else here
-                    </a> */}
+                  
                   </div>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

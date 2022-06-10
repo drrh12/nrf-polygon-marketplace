@@ -90,9 +90,18 @@ export default function MarketPlace() {
         <div class="px-lg-5" id="market-container">
           <div class="row py-5">
             <div class="col-lg-12 mx-auto">
+              
               <div class="text-black p-5 shadow-sm rounded banner">
+                {/* <p class="lead">Welcome to this project. To user the market to purchase NFTs, you will need to set up a cripto wallet first. If this is your first time, please click on the guide button.</p>
+                  <Link
+                    to="/guide"
+                    class="btn btn-warning px-5 py-2 text-uppercase"
+                  >
+                    GUIDE
+                  </Link> */}
                 <p class="lead">Number of items displayed: {nfts.length}</p>
               </div>
+
             </div>
           </div>
 
