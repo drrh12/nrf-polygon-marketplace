@@ -93,27 +93,27 @@ export default function Collection() {
     setNfts(items);
     setLoadingState("loaded");
   }
-  if (loadingState === "loaded" && !nfts.length)
+  // if (loadingState === "loaded" && !nfts.length)
   
-    return (
-      <div class="row py-5">
-        <div class="col-lg-12 mx-auto">
-          <div class="text-black p-5 shadow-sm rounded banner">
-            {/* <h1 class="display-4">Address:</h1> */}
-            <p class="lead">Address: {defaultAccount}</p>
-            <p class="lead">Balance: {userBalance}</p>
-            <div onClick={connectWalletHandler} class="py-5 text-right">
-              <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
-                CONNECT YOUR WALLET
-              </a>
-            </div>
-          </div>
+  //   return (
+     
+  //     <div class="row py-5">
+  //       <div class="col-lg-12 mx-auto">
+  //         <div class="text-black p-5 shadow-sm rounded banner">
+  //           {/* <h1 class="display-4">Address:</h1> */}
+  //           <p class="lead">Address: {defaultAccount}</p>
+  //           <p class="lead">Balance: {userBalance}</p>
 
-          
+  //           <div onClick={connectWalletHandler} class="py-5 text-right">
+  //             <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
+  //               CONNECT YOUR WALLET
+  //             </a>
+  //           </div>
+  //         </div>
 
-        </div>
-      </div>
-    );
+  //       </div>
+  //     </div>
+  //   );
 
   return (
     <>
@@ -125,10 +125,13 @@ export default function Collection() {
               <div class="text-black p-5 shadow-sm rounded banner">
                 <p class="lead">Address: {defaultAccount}</p>
                 <p class="lead">Balance: {userBalance}</p>
+
                 <div onClick={connectWalletHandler()} class="py-5 text-right">
-                  <a href="#" class="btn btn-success px-5 py-3 text-uppercase">
-                    CONNECTED
+
+                  <a href="#" class="btn btn-warning px-4 py-2 text-uppercase">
+                    CONNECT
                   </a>
+
                 </div>
               </div>
             </div>
